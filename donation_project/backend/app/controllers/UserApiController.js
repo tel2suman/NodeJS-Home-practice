@@ -89,7 +89,7 @@ class UserApiController {
 
                 return res.status(400).json({
                     success: false,
-                    message: "post id is required",
+                    message: "user id is required",
                 })
             }
 
