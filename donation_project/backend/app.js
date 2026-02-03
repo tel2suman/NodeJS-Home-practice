@@ -57,6 +57,9 @@ app.use('/api/v1', UserApiRoute);
 const PostApiRoute =require('./app/routes/PostApiRoute');
 app.use('/api/p1/', PostApiRoute);
 
+const ProductApiRoute =require('./app/routes/ProductApiRoute');
+app.use('/api/pro1/', ProductApiRoute);
+
 const port = 3000;
 
 app.listen(port,()=>{
