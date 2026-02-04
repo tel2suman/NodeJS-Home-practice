@@ -90,6 +90,61 @@ class ProductApiController {
         }
     }
 
+    //update product
+    async updateProduct(req, res) {
+
+        try {
+
+            const id = req.params.id;
+
+            if (!id) {
+
+                return res.status(400).json({
+                    success: false,
+                    message: "product id is not found",
+                });
+            }
+
+            const data = await Product.findByIdAndUpdate(id, req.body,{new: true});
+
+            return res.status(200).json({
+                success: true,
+                message: "product updated successfully",
+                data: data,
+            });
+
+        } catch (error) {
+
+            return res.status(500).json({
+                success: false,
+                message: error.message,
+            });
+        }
+    }
+
+    //delete product
+    async deleteProduct(req, res) {
+
+        try {
+
+            const id = req.params.id
+
+            const data = await Product.findByIdAndDelete(id);
+
+            return res.status(200).json({
+                success: true,
+                message: "product deleted succesfully",
+                data: data,
+            });
+
+        } catch (error) {
+
+            return res.status(500).json({
+                success: false,
+                message: error.message,
+            });
+        }
+    }
 }
 
 

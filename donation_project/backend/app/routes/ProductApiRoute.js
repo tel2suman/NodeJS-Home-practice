@@ -11,4 +11,9 @@ router.get('/product', ProductApiController.readProduct);
 
 router.get('/edit/:id', ProductApiController.editProduct);
 
+router.put('/update/:id', ProductApiController.updateProduct);
+
+router.delete('/delete/:id', ProductApiController.deleteProduct);
+
+
 module.exports = router;

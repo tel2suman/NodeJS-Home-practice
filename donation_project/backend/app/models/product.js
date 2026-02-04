@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ProductSchema = new Schema({
-
   name: {
     type: String,
     required: true,
@@ -15,11 +14,9 @@ const ProductSchema = new Schema({
   color: [],
 
   image: {
-    default: {
-      type: Boolean,
-      url: "https://via.placeholder.com/600/92c952",
-      required: true,
-    },
+    type: Boolean,
+    default: "https://via.placeholder.com/600/92c952",
+    required: true,
   },
 
   desc: {
@@ -31,7 +28,6 @@ const ProductSchema = new Schema({
     type: String,
     required: true,
   },
-
 });
 
 const ProductModel = mongoose.model('product', ProductSchema);
